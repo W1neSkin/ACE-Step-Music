@@ -40,9 +40,9 @@ export default function Layout({ children }: { children: ReactNode }) {
             <div className="absolute inset-0 rounded-full bg-accent/20 blur-md" />
           </div>
           <div>
-            <h1 className="text-lg font-bold tracking-tight">ACE Studio</h1>
+            <h1 className="text-lg font-bold tracking-tight">La' Musica</h1>
             <p className="text-[10px] uppercase tracking-[0.2em] text-gray-500">
-              Music Generator
+              Powered by ACE-Step
             </p>
           </div>
         </div>
