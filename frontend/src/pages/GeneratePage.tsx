@@ -154,11 +154,14 @@ export default function GeneratePage() {
             <label className="flex items-center gap-2 text-sm font-medium text-gray-300 mb-2">
               <Sparkles size={14} className="text-accent" />
               Style Description
+              <span className="text-xs text-gray-600 ml-auto">
+                Tip: add "male vocals" or "female vocals"
+              </span>
             </label>
             <textarea
               value={prompt}
               onChange={(e) => setPrompt(e.target.value)}
-              placeholder="e.g. Energetic pop rock with electric guitar, catchy melody, upbeat drums..."
+              placeholder="e.g. Energetic pop rock with female vocals, electric guitar, catchy melody, upbeat drums... (use 'male vocals' or 'female vocals' to control voice type)"
               rows={3}
               className="w-full rounded-xl bg-surface-100 border border-surface-200 px-4 py-3 text-sm text-white placeholder-gray-600 focus:border-accent/50 focus:ring-1 focus:ring-accent/30 outline-none transition resize-none"
             />
@@ -256,7 +259,7 @@ export default function GeneratePage() {
             {/* Language */}
             <div>
               <label className="flex items-center gap-1.5 text-xs text-gray-400 mb-2">
-                <Mic size={12} /> Vocal Language
+                <Mic size={12} /> <span title="Controls singing accent/pronunciation. Match it to your lyrics language for best results.">Vocal Language &#9432;</span>
               </label>
               <div className="flex flex-wrap gap-1.5">
                 {LANGUAGES.map((l) => (
@@ -323,7 +326,7 @@ export default function GeneratePage() {
               </div>
               <div>
                 <label className="flex items-center justify-between text-xs text-gray-400 mb-2">
-                  <span>Steps</span>
+                  <span title="More steps = higher quality, slower generation. 8 is optimal for Turbo model.">Steps &#9432;</span>
                   <span className="font-mono text-accent-light">{steps}</span>
                 </label>
                 <input
