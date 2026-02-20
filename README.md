@@ -1,6 +1,8 @@
-# ACE Music Studio
+# La' Musica
 
 Local music generation app powered by [ACE-Step 1.5](https://github.com/ace-step/ACE-Step-1.5).
+
+Generate music from text descriptions, create song lyrics in multiple languages, and manage your generation history — all running locally on your GPU.
 
 ## Architecture
 
@@ -30,10 +32,12 @@ Local music generation app powered by [ACE-Step 1.5](https://github.com/ace-step
 
 ```bash
 # 1. Clone the repo
-git clone <this-repo>
-cd ACE-Step
+git clone https://github.com/W1neSkin/ACE-Step-Music.git
+cd ACE-Step-Music
 
-# 2. (Optional) Edit .env to customize settings
+# 2. Copy and edit env config
+cp .env.example .env
+# (Optional) edit .env to customize DB password, model settings, etc.
 
 # 3. Start all services
 docker compose up --build
@@ -41,7 +45,6 @@ docker compose up --build
 # 4. Open the app
 # Frontend: http://localhost:3000
 # Backend API: http://localhost:8000/docs
-# ACE-Step API: http://localhost:8001/health
 ```
 
 First launch will take 10-20 minutes to download models (cached for subsequent runs).
@@ -64,8 +67,8 @@ npm run dev
 
 ## Features
 
-- **Music Generation** — describe a style, write lyrics, set BPM/key/duration, generate
-- **Lyrics AI** — generate song lyrics in English, Russian, or Belarusian
+- **Music Generation** — describe a style, write lyrics, set BPM/key/duration, generate multiple variants
+- **Lyrics AI** — generate song lyrics in English, Russian, or Belarusian using Qwen 2.5
 - **Audio Player** — waveform visualization, variant switching, download
 - **History** — browse and replay past generations
 - **Dark theme** — modern UI inspired by Suno/Spotify aesthetic
@@ -83,3 +86,7 @@ npm run dev
 | GET    | /api/history/{id}            | Get generation details     |
 | DELETE | /api/history/{id}            | Delete a generation        |
 | GET    | /api/health                  | Health check               |
+
+## License
+
+MIT
